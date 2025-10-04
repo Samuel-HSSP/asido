@@ -13,7 +13,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+>>>>>>> recovery
 
 export default function Home() {
   const menuButtons = [
@@ -49,7 +52,10 @@ export default function Home() {
       title: "MILESTONES",
     },
   ];
+<<<<<<< HEAD
   const [currentMenu, setCurrentMenu] = useState("MILESTONES");
+=======
+>>>>>>> recovery
 
   const data = [
     {
