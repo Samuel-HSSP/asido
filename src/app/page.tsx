@@ -13,10 +13,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-<<<<<<< HEAD
 import { useState } from "react";
-=======
->>>>>>> recovery
+import { motion } from "framer-motion";
 
 export default function Home() {
   const menuButtons = [
@@ -52,10 +50,7 @@ export default function Home() {
       title: "MILESTONES",
     },
   ];
-<<<<<<< HEAD
   const [currentMenu, setCurrentMenu] = useState("MILESTONES");
-=======
->>>>>>> recovery
 
   const data = [
     {
@@ -510,7 +505,11 @@ export default function Home() {
         </div>
         
         {/* Hero Section */}
-        <div className="">
+        <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 2 * 0.2 }}
+      viewport={{ once: true }} className="">
           <Image
             className="dark:invert h-fit w-full"
             src="/landing/hero.png"
@@ -519,20 +518,32 @@ export default function Home() {
             height={380}
             priority
           />
-        </div>
+        </motion.div>
 
-        <div className="p-4 py-4 flex bg-[#d1d1d1] items-center justify-between">
-          <p className="text-[#0044B5] font-bold">MILESTONES</p>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2 * 0.2 }}
+          viewport={{ once: true }} className="p-4 py-4 flex bg-[#d1d1d1] items-center justify-between">
+              <p className="text-[#0044B5] font-bold">MILESTONES</p>
           <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5' onClick={toggleSidebar}>
             <Menu className='text-[#0044B5] dark:text-white' />
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="relative w-full overflow-clip">
+        <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 2 * 0.2 }}
+      viewport={{ once: true }} className="relative w-full overflow-clip">
           <Timeline data={data} />
-        </div>
+        </motion.div>
 
-        <div>
+        <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 2 * 0.2 }}
+      viewport={{ once: true }}>
           <div className="flex items-start px-4 flex-col gap-1.5">
             <p className="text-sm font-bold md:text-sm text-[#00B191]">
               Stay Informed
@@ -541,7 +552,7 @@ export default function Home() {
               Through advocacy, education, and support, we&apos;re building a stigma-free future for mental health in Nigeria
             </p>
           </div>
-        </div>
+        </motion.div>
       </main>
 
     </div>
