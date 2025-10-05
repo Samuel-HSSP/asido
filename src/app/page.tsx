@@ -19,26 +19,9 @@ import Link from "next/link";
 import Milestones from "@/components/custom/landing/milestones";
 import TopBar from "@/components/custom/landing/topbar";
 import Footer from "@/components/custom/landing/footer";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 
 export default function Home() {
-  const menuButtons = [
-    {
-      title: "ABOUT US",
-      href: "/",
-    },
-    {
-      title: "IMPACT",
-      href: "/",
-    },
-        {
-      title: "GET INVOLVED",
-      href: "/",
-    },
-        {
-      title: "STAY INFORMED",
-      href: "/",
-    },
-  ];
 
   const tabs = [
     {
@@ -100,7 +83,7 @@ export default function Home() {
           />
         </motion.div>
 
-        <Tabs defaultValue="milestones" className="lg:flex items-center justify-center py-3 flex w-[90%]">
+        <Tabs defaultValue="milestones" className="lg:flex items-center justify-center py-3 hidden w-full">
           <TabsList className="flex lg:flex-row flex-col items-center bg-transparent justify-center w-full px-20 gap-20 pb-4 lg:border-b-2 lg:border-b-[#999999] rounded-none">
             {
               tabs.map((value, index) => (
@@ -108,17 +91,49 @@ export default function Home() {
               ))
             }
           </TabsList>
-          <TabsContent value="milestones" className="bg-blue-700">
+          <TabsContent value="milestones">
             <Milestones />
           </TabsContent>
         </Tabs>
+
+        <div className="flex items-center justify-between px-5 py-5 bg-[#f6f5fa]">
+          <p className="text-[#0044B5] font-bold text-lg">{currentMenu}</p>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <Menu className='text-[#0044B5] dark:text-white' />
+            </DropdownMenuTrigger>
+
+            <DropdownMenuContent className="w-full">
+              <ToggleGroup type="single"
+                value={currentMenu}
+                onValueChange={(value) => {
+                  if (value) setCurrentMenu(value);
+                }} className="flex flex-col items-end gap-5 transition-1 py-4">
+                {
+                  tabs.map((tab, index) => (
+                    <ToggleGroupItem key={index} value={tab.title} className="text-[#0044B5] data-[state=on]:bg-transparent data-[state=on]:text-[#00B191] font-bold">{tab.title}</ToggleGroupItem>
+                  ))
+                }
+              </ToggleGroup>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
+        
+        {
+          currentMenu === "MILESTONES" && (
+            <div>
+              <Milestones />
+            </div>
+          )
+        }
+        
 
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 5 * 0.2 }}
           viewport={{ once: true }}>
-          <div className="flex items-start px-4 flex-col gap-1.5">
+          <div className="flex items-start px-4 mt-5 flex-col gap-1.5">
             <p className="text-sm font-bold md:text-sm text-[#00B191]">
               Stay Informed
             </p>
@@ -144,7 +159,7 @@ export default function Home() {
                   />
                 </div>
                 <p className="font-bold text-lg whitespace-wrap">{value.title}</p>
-                <Link href={value.url} className="text-[] font-bold">
+                <Link href={value.url} className="text-[#0044B5] text-sm font-bold">
                   READ MORE
                 </Link>
               </CarouselItem>

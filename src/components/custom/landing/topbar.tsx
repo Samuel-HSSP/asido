@@ -26,7 +26,7 @@ export default function TopBar() {
   ];
 
     return (
-        <div className="px-10">
+        <div className="px-2">
             <div className="flex lg:px-5 py-4 w-full items-center justify-between">
                 <Image
                     className="dark:invert h-7 lg:h-10 w-fit"
@@ -44,7 +44,7 @@ export default function TopBar() {
                     {/* </Button> */}
 
                     <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5' onClick={toggleSidebar}>
-                    <Menu className='text-[#0044B5] dark:text-white' />
+                        <Menu className='text-[#0044B5] dark:text-white' />
                     </Button>
                 </div>
 
