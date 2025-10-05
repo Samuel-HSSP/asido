@@ -1,6 +1,6 @@
 "use client";
 
-import { ChartPie, FlaskConical, Home, PersonStanding, Stethoscope, Users } from "lucide-react";
+import { ArrowRight, ChartPie, ChevronRight, FlaskConical, Home, PersonStanding, Stethoscope, Users } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -20,32 +20,26 @@ const items = [
   {
     title: "ABOUT US",
     url: "/about",
-    icon: Home,
   },
   {
     title: "IMPACT",
     url: "/impact",
-    icon: Users,
   },
   {
     title: "GET INVOLVED",
     url: "/get-involved",
-    icon: FlaskConical,
   },
   {
     title: "STAY INFORMED",
     url: "/stay-informed",
-    icon: Stethoscope,
   },
   {
     title: "TAKE THE PLEDGE",
     url: "/pledge",
-    icon: ChartPie,
   },
   {
     title: "DONATE",
     url: "/donate",
-    icon: PersonStanding,
   },
 ];
 
@@ -83,8 +77,12 @@ export default function Navbar() {
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild className="p-2 h-[45px] text-lg font-medium">
                 <a href={item.url}>
-                  <item.icon className="text-lg text-[#33948e]" />
-                  <span>{item.title}</span>
+                  {
+                    item.title === 'ABOUT US' && (
+                      <ArrowRight className="text-sm w-24 text-[#0044B5]" />
+                    )
+                  }
+                  <span className={`text-sm ${item.title === 'ABOUT US' ? 'text-[#0044B5]' : ''}`}>{item.title}</span>
                 </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -111,7 +109,7 @@ export default function Navbar() {
       {items.filter(item => item.url === "/donate")
         .map((item) => (
           <Link href={item.url} key={item.title} className="w-full flex justify-center">
-            <Button className="w-full bg-green-700">
+            <Button className="w-full bg-[#00B191]">
               {item.title}
             </Button>
           </Link>
