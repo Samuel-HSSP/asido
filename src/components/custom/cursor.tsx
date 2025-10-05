@@ -14,5 +14,5 @@ export default function CustomCursor() {
     return () => window.removeEventListener("mousemove", moveCursor);
   }, []);
 
-  return <div className="custom-cursor" />;
+  return <div className="custom-cursor lg:flex hidden" />;
 };

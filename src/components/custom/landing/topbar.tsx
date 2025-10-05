@@ -27,7 +27,7 @@ export default function TopBar() {
 
     return (
         <div className="px-10">
-            <div className="flex px-5 py-4 w-full items-center justify-between">
+            <div className="flex lg:px-5 py-4 w-full items-center justify-between">
                 <Image
                     className="dark:invert h-7 lg:h-10 w-fit"
                     src="/logos/asido.png"
