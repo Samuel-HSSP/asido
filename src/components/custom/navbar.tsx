@@ -82,7 +82,7 @@ export default function Navbar() {
                       <ArrowRight className="text-sm w-24 text-[#0044B5]" />
                     )
                   }
-                  <span className={`text-sm ${item.title === 'ABOUT US' ? 'text-[#0044B5]' : ''}`}>{item.title}</span>
+                  <span className={`text-sm font-bold ${item.title === 'ABOUT US' ? 'text-[#0044B5]' : ''}`}>{item.title}</span>
                 </a>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -98,7 +98,7 @@ export default function Navbar() {
       {items.filter(item => item.url === "/pledge")
         .map((item) => (
           <Link href={item.url} key={item.title} className="w-full hover:bg-muted-foreground flex justify-center">
-            <Button key={item.title} className="w-full" variant="ghost">
+            <Button key={item.title} className="w-full font-bold" variant="ghost">
               {item.title}
             </Button>
           </Link>
@@ -108,8 +108,8 @@ export default function Navbar() {
 
       {items.filter(item => item.url === "/donate")
         .map((item) => (
-          <Link href={item.url} key={item.title} className="w-full flex justify-center">
-            <Button className="w-full bg-[#00B191]">
+          <Link href={item.url} key={item.title} className="w-full font-bold flex justify-center">
+            <Button className="w-full font-bold bg-[#00B191]">
               {item.title}
             </Button>
           </Link>
