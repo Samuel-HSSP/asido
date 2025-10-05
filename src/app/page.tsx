@@ -2,8 +2,8 @@
 
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
-import { Timeline } from "@/components/ui/timeline";
-import { ChevronRight, Menu, Search } from "lucide-react";
+import { Timeline } from "@/components/custom/timeline";
+import { ChevronRight, Mail, MapPin, Menu, Phone, Search } from "lucide-react";
 import Image from "next/image";
 import {
   DropdownMenu,
@@ -14,8 +14,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m, motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Link from "next/link";
 
 export default function Home() {
   const menuButtons = [
@@ -472,9 +474,73 @@ export default function Home() {
 
   ];
 
+  const carousel = [
+    {
+      title: "Naija Spirit: Unique Powers of Resilience or Learned Helplessness?",
+      src: "/programs/misc/1.png",
+      url: "",
+    },
+    {
+      title: "Ignorance Around Mental Health Challenges is Expensive",
+      src: "/programs/misc/2.png",
+      url: "",
+    },
+    {
+      title: "Stretched to Breaking Point: Emotional Burden of Caring for the Elderly with Dementia",
+      src: "/programs/misc/3.png",
+      url: "",
+    },
+
+  ];
+
+  const footerLinks = [
+    {
+      title: "Quick Links",
+      links: [
+        {
+          title: "Programs",
+          url: "",
+        },
+        {
+          title: "Blog",
+          url: "",
+        },
+        {
+          title: "Thursday Tribune",
+          url: "",
+        },
+        {
+          title: "IMCE Sessions",
+          url: "",
+        },  
+      ]
+    },
+    {
+      title: "Support",
+      links: [
+        {
+          title: "Donate",
+          url: "",
+        },
+        {
+          title: "Volunteer",
+          url: "",
+        },
+        {
+          title: "Book Campaign",
+          url: "",
+        },
+        {
+          title: "Unashamed Pledge",
+          url: "",
+        },  
+      ]
+    },
+  ];
+
   return (
-    <div className="grid overflow-y-auto min-h-screen w-full pb-20">
-      <main className="flex h-fit w-full grid flex-col items-start justify-center">
+    <div className="grid overflow-y-auto mx-auto min-h-screen w-full">
+      <main className="flex h-fit mx-auto w-full grid flex-col items-start justify-center">
         <div className="flex px-5 py-4 w-full items-center justify-between">
           <Image
             className="dark:invert h-7 lg:h-20 w-fit"
@@ -536,7 +602,7 @@ export default function Home() {
           <TabsList className="flex items-center bg-transparent justify-center w-full">
             {
               tabs.map((value, index) => (
-                <TabsTrigger key={index} className="px-0 [data-state='active']:text-green-600 font-bold bg-none text-[#0044B5] hover:bg-transparent" value={value.value}>{value.title}</TabsTrigger>
+                <TabsTrigger key={index} className="rounded-none w-fit data-[state=active]:shadow-none data-[state=active]:text-green-600 font-bold bg-none text-[#0044B5] hover:bg-transparent" value={value.value}>{value.title}</TabsTrigger>
               ))
             }
           </TabsList>
@@ -544,7 +610,6 @@ export default function Home() {
         </Tabs>
 
         <div className="relative w-full overflow-clip">
-          {/* <Timeline data={data} /> */}
           <Timeline data={data} />
         </div>
 
@@ -562,7 +627,86 @@ export default function Home() {
             </p>
           </div>
         </motion.div>
+
+        <Carousel className="hidden">
+          <CarouselContent className="px-20 flex items-start justify-center">
+            { carousel.map((value, index) => (
+              <CarouselItem key={index} className="flex basis-1/3 flex-col gap-3 items-start max-w-[400px] justify-center">
+                <div className="h-fit">
+                  <Image
+                    src={value.src}
+                    alt="Guy"
+                    width={500}
+                    height={500}
+                    quality={100}
+                    objectFit="contain"
+                    className="h-full w-fit"
+                  />
+                </div>
+                <p className="font-bold text-lg whitespace-wrap">{value.title}</p>
+                <Link href={value.url} className="text-[] font-bold">
+                  READ MORE
+                </Link>
+            </CarouselItem>
+            ))}
+            
+          </CarouselContent>
+        </Carousel>
       </main>
+
+      <footer className="bg-[#0044B5] items-center mt-20 px-5 flex flex-col">
+        <div className="lg:items-start items-center lg:flex-row flex-col w-fit justify-between gap-5 border-b-[1px] border-b-[#ABABAB] pt-40 flex">
+          <div className="flex lg:w-[25%] flex-col items-center lg:items-start justify-center">
+            <Image
+              className="dark:invert h-10 lg:h-10 w-fit"
+              src="/logos/asido-white.png"
+              alt="ASIDO Foundation logo"
+              width={2000}
+              height={1000}
+              priority
+              quality={100}
+            />
+            <p className="text-sm text-white lg:text-left text-center">Making mental health support accessible through advocacy and action</p>
+          </div>
+          <div className="flex mt-10 lg:w-[50%] items-start w-full justify-around">
+            {
+              footerLinks.map((value, index) => (
+                <div className="flex flex-col py-5 lg:border-none border-t-[1px] border-t-[#ABABAB] items-start gap-3 justify-center">
+                  <p key={index} className="text-lg font-bold text-white">{value.title}</p>
+                  {
+                    value.links.map((link, index) => (
+                      <Link key={index} href={link.url} className="text-white text-lg">{link.title}</Link>
+                    ))
+                  }
+                </div>
+              ))
+            }
+          </div>
+          <div className="flex py-5 w-[85%] lg:border-none border-t-[1px] border-t-[#ABABAB] lg:w-[25%] flex-col items-start justify-center">
+            <p className="text-lg pb-5 font-bold text-white">Contact Us</p>
+            <div className="flex items-center gap-2 justify-center">
+              <MapPin strokeWidth={1} className="text-white" size={25} />
+              <p className="text-lg text-white">No 4, Awosika Street, Old Bodija, Ibadan.</p>
+            </div>
+            <div className="flex items-center gap-2 justify-start">
+              <Mail strokeWidth={1} className="text-white" size={25} />
+              <Link href="mailto:asidofoundation@gmail.com"><Button variant="link" className="text-lg text-white">asidofoundation@gmail.com</Button></Link>
+            </div>
+            <div className="flex items-center gap-2 justify-center">
+              <Phone strokeWidth={1} className="text-white" size={25} />
+              <div className="flex items-start justify-start">
+                <Link href="tel:+2348180777458"><Button variant="link" className="text-lg text-white">+234 818 077 7458</Button></Link>
+                <Link href="tel:+2349028080416"><Button variant="link" className="whitespace-normal text-lg text-white">+234 902 808 0416</Button></Link>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <div className="items-start justify-start w-[75%] pt-10 flex">
+          <p className="text-lg text-white w-full">© 2025 Asido Foundation. All Rights Reserved.</p>
+        </div>
+
+      </footer>
 
     </div>
   );
