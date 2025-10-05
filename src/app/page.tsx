@@ -671,8 +671,8 @@ export default function Home() {
           <div className="flex mt-10 lg:w-[50%] items-start w-full justify-around">
             {
               footerLinks.map((value, index) => (
-                <div className="flex flex-col py-5 lg:border-none border-t-[1px] border-t-[#ABABAB] items-start gap-3 justify-center">
-                  <p key={index} className="text-lg font-bold text-white">{value.title}</p>
+                <div key={index} className="flex flex-col py-5 lg:border-none border-t-[1px] border-t-[#ABABAB] items-start gap-3 justify-center">
+                  <p className="text-lg font-bold text-white">{value.title}</p>
                   {
                     value.links.map((link, index) => (
                       <Link key={index} href={link.url} className="text-white text-lg">{link.title}</Link>
