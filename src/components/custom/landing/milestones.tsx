@@ -3,6 +3,7 @@ import { Button } from "../../ui/button";
 import Image from "next/image";
 import { Timeline } from "../timeline";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Milestones() {
     const data = [
@@ -106,15 +107,15 @@ export default function Milestones() {
               viewport={{ once: true }} className="text-lg font-bold text-black md:text-sm">
               First interactive monthly series fostering dialogue and education on mental health.
             </motion.p>
-            <Button
-              variant="ghost"
+            <Link
+              href="https://x.com/asidofoundation/status/1264821124363403265"
               className="group mb-10 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           </motion.div>
         </motion.div>  
       )
@@ -162,15 +163,15 @@ export default function Milestones() {
                 className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
               />
             </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+              href="https://asidofoundation.com/unashamed/"
               className="group mb-10 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           
           </motion.div>
           {/* 2 */}
@@ -194,10 +195,10 @@ export default function Milestones() {
               Sharing real stories to amplify voices and lived experiences in mental health.
             </motion.p>
             <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2 * 0.2 }}
-          viewport={{ once: true }} className="h-fit">
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 2 * 0.2 }}
+              viewport={{ once: true }} className="h-fit">
               <Image
                 src="/programs/2020/2020_b.png"
                 alt="startup template"
@@ -208,15 +209,15 @@ export default function Milestones() {
                 className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
               />
             </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+              href="https://asidofoundation.com/limi-africa/"
               className="group mb-10 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           </motion.div>
           {/* 3 */}
           <motion.div
@@ -238,15 +239,15 @@ export default function Milestones() {
               viewport={{ once: true }} className="text-lg font-bold text-black md:text-sm">
               Launching a lifesaving support line for psychosocial emergencies.
             </motion.p>
-            <Button
-              variant="ghost"
+            <Link
+              href="https://x.com/asidofoundation/status/1269930070803648512"
               className="group mb-10 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           </motion.div>
         </motion.div>  
       )
@@ -279,15 +280,15 @@ export default function Milestones() {
               viewport={{ once: true }} className="text-lg mb-3 font-bold text-black md:text-sm">
               Providing targeted support and hope to those facing mental health challenges.
             </motion.p>
-            <Button
-              variant="ghost"
+            <Link
+              href="https://x.com/asidofoundation/status/1513160629477064710"
               className="group mb-10 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           </motion.div>
           {/* 2 */}
           <motion.div
@@ -511,15 +512,15 @@ export default function Milestones() {
                 className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
               />
             </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+              href="#"
               className="group mb-10 ml-0 text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
           </motion.div>
         </motion.div>  
       )
@@ -567,15 +568,15 @@ export default function Milestones() {
               className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
             />
           </motion.div>
-          <Button
-            variant="ghost"
+          <Link
+            href="#"
             className="group text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
           >
             LEARN MORE
             <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
             
             <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-          </Button>
+          </Link>
         </motion.div>
         {/* 2 */}
         <motion.div
@@ -612,15 +613,15 @@ export default function Milestones() {
               className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
             />
           </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+        href="#"
               className="group text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
         </motion.div>
         {/* 3 */}
         <motion.div
@@ -657,15 +658,15 @@ export default function Milestones() {
               className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
             />
           </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+        href="#"
               className="group text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
         </motion.div>
         {/* 4 */}
         <motion.div
@@ -723,15 +724,15 @@ export default function Milestones() {
               viewport={{ once: true }} className="text-lg mb-6 font-bold text-black md:text-sm">
             Engaging the public and submitting a formal memorandum to influence policy.
           </motion.p>
-            <Button
-              variant="ghost"
+            <Link
+        href="#"
               className="group text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
         </motion.div>
         {/* 6 */}
         <motion.div
@@ -768,15 +769,15 @@ export default function Milestones() {
               className="shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] h-full w-fit"
             />
           </motion.div>
-            <Button
-              variant="ghost"
+            <Link
+              href="#"
               className="group text-[#0044B5] hover:bg-transparent hover:text-[#00B191] font-bold flex items-center gap-1"
             >
               LEARN MORE
               <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
               
               <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
-            </Button>
+            </Link>
         </motion.div>
       </motion.div>  
     )

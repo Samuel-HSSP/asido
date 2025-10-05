@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Menu, Phone, Search } from "lucide-react";
+import { ArrowRight, ChevronRight, Mail, MapPin, Menu, Phone, Search } from "lucide-react";
 import Image from "next/image";
 import {
   DropdownMenu,
@@ -158,9 +158,14 @@ export default function Home() {
                     className="h-full w-fit"
                   />
                 </div>
-                <p className="font-bold text-lg whitespace-wrap">{value.title}</p>
-                <Link href={value.url} className="text-[#0044B5] text-sm font-bold">
+                <p className="font-bold text-sm lg:text-lg whitespace-wrap">{value.title}</p>
+                <Link href={value.url}
+                  className="group mb-10 text-[#0044B5] hover:bg-transparent text-sm hover:text-[#00B191] font-bold flex items-center gap-1"
+                >
                   READ MORE
+                  <ChevronRight className="transition-all duration-200 group-hover:opacity-0 group-hover:-translate-x-1" color="#0044B5" />
+                  
+                  <ArrowRight className="transition-all duration-200 opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0" color="#00B191" />
                 </Link>
               </CarouselItem>
             ))}
