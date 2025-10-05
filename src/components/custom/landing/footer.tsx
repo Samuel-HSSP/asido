@@ -74,8 +74,8 @@ export default function Footer() {
     ];
 
     return (
-      <footer className="relative bg-[#0044B5] py-20 items-center mt-20 px-5 flex flex-col">
-        <div className="lg:items-start items-center lg:flex-row flex-col w-fit justify-between gap-5 lg:border-b-[1px] lg:border-b-[#ABABAB] pt-20 flex">
+      <footer className="relative bg-[#0044B5] py-5 pb-10 items-center mt-20 px-5 flex flex-col">
+        <div className="lg:items-start items-center lg:flex-row flex-col w-fit justify-between gap-5 lg:border-b-[1px] lg:border-b-[#ABABAB] pt-10 flex">
           {/* ASIDO */}
           <div className="flex lg:w-[25%] gap-3 flex-col items-center lg:items-start justify-center">
             <Image
