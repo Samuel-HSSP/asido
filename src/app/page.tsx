@@ -125,7 +125,7 @@ export default function Home() {
 
   return (
     <div className="grid overflow-y-auto mx-auto min-h-screen w-full">
-      <main className="flex h-fit mx-auto w-full grid flex-col items-start justify-center">
+      <main className="flex h-fit mx-auto w-full grid flex-col items-center justify-center">
         <TopBar />
         
         {/* Hero Section */}
@@ -144,8 +144,8 @@ export default function Home() {
           />
         </motion.div>
 
-        <Tabs defaultValue="milestones" className="lg:flex items-center justify-center py-3 hidden w-[90%] lg:border-b-2 lg:border-b-[#999999]">
-          <TabsList className="flex items-center bg-transparent justify-center w-fit gap-20">
+        <Tabs defaultValue="milestones" className="lg:flex items-center bg-black justify-center py-3 hidden w-[90%]">
+          <TabsList className="flex items-center bg-transparent justify-center w-full px-20 gap-20 pb-4 lg:border-b-2 lg:border-b-[#999999] rounded-none">
             {
               tabs.map((value, index) => (
                 <TabsTrigger key={index} className="rounded-none w-fit data-[state=active]:shadow-none data-[state=active]:text-green-600 font-bold bg-none text-[#0044B5] hover:bg-transparent" value={value.value}>{value.title}</TabsTrigger>
@@ -200,8 +200,8 @@ export default function Home() {
         </Carousel>
       </main>
 
-      <footer className="bg-[#0044B5] items-center mt-20 px-5 flex flex-col">
-        <div className="lg:items-start items-center lg:flex-row flex-col w-fit justify-between gap-5 lg:border-b-[1px] lg:border-b-[#ABABAB] pt-40 flex">
+      <footer className="relative bg-[#0044B5] py-20 items-center mt-20 px-5 flex flex-col">
+        <div className="lg:items-start items-center lg:flex-row flex-col w-fit justify-between gap-5 lg:border-b-[1px] lg:border-b-[#ABABAB] pt-20 flex">
           <div className="flex lg:w-[25%] gap-3 flex-col items-center lg:items-start justify-center">
             <Image
               className="dark:invert h-10 lg:h-10 w-fit"
@@ -214,10 +214,10 @@ export default function Home() {
             />
             <p className="text-sm text-white lg:text-left text-center">Making mental health support accessible through advocacy and action</p>
           </div>
-          <div className="flex mt-10 lg:w-[50%] items-start w-full justify-around">
+          <div className="flex lg:mt-0 mt-10 lg:w-[50%] items-start w-full justify-around">
             {
               footerLinks.map((value, index) => (
-                <div key={index} className="flex flex-col py-5 lg:border-none border-t-[1px] border-t-[#ABABAB] items-start gap-3 justify-center">
+                <div key={index} className="flex flex-col lg:py-0 py-5 lg:border-none border-t-[1px] border-t-[#ABABAB] items-start gap-3 justify-center">
                   <p className="text-sm lg:text-lg font-bold text-white">{value.title}</p>
                   {
                     value.links.map((link, index) => (
@@ -228,7 +228,7 @@ export default function Home() {
               ))
             }
           </div>
-          <div className="flex py-5 pb-10 w-[85%] lg:border-none border-y-[1px] border-y-[#ABABAB] lg:w-[25%] flex-col items-start justify-center">
+          <div className="flex lg:py-0 py-5 pb-10 w-[85%] lg:border-none border-y-[1px] border-y-[#ABABAB] lg:w-[25%] flex-col items-start justify-center">
             <p className="text-sm lg:text-lg pb-5 font-bold text-white">Contact Us</p>
             <div className="flex items-center gap-2 justify-center">
               <MapPin strokeWidth={1} className="text-white" size={25} />
@@ -240,9 +240,9 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2 justify-center">
               <Phone strokeWidth={1} className="text-white" size={25} />
-              <div className="flex items-start justify-start">
+              <div className="flex lg:flex-wrap items-start justify-start">
                 <Link href="tel:+2348180777458"><Button variant="link" className="text-sm lg:text-lg text-white">+234 818 077 7458</Button></Link>
-                <Link href="tel:+2349028080416"><Button variant="link" className="whitespace-normal text-sm lg:text-lg text-white">+234 902 808 0416</Button></Link>
+                <Link href="tel:+2349028080416"><Button variant="link" className="text-sm lg:text-lg text-white">+234 902 808 0416</Button></Link>
               </div>
             </div>
             
@@ -251,6 +251,15 @@ export default function Home() {
         <div className="items-start justify-start py-5 lg:pt-10 flex">
           <p className="text-sm lg:text-lg text-white w-full">© 2025 Asido Foundation. All Rights Reserved.</p>
         </div>
+
+        <Image
+            className="z-10 absolute right-0 top-0 h-full w-fit"
+            src="/landing/footer-bg.png"
+            alt="Hero image"
+            width={1800}
+            height={380}
+            priority
+          />
 
       </footer>
 
