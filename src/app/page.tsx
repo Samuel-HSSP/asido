@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useSidebar } from "@/components/ui/sidebar";
-import { Timeline } from "@/components/custom/timeline";
+import { Timeline } from "@/components/ui/timeline";
 import { ChevronRight, Menu, Search } from "lucide-react";
 import Image from "next/image";
 import {
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Home() {
   const menuButtons = [
@@ -36,18 +37,22 @@ export default function Home() {
     },
   ];
   const { toggleSidebar } = useSidebar();
-  const dropdown = [
+  const tabs = [
     {
       title: "WHO WE ARE",
+      value: "who",
     },
     {
       title: "LEADERSHIP",
+      value: "leadership",
     },
     {
       title: "OUR VOLUNTEER TEAM",
+      value: "team",
     },
     {
       title: "MILESTONES",
+      value: "milestones",
     },
   ];
   const [currentMenu, setCurrentMenu] = useState("MILESTONES");
@@ -469,8 +474,8 @@ export default function Home() {
 
   return (
     <div className="grid overflow-y-auto min-h-screen w-full pb-20">
-      <main className="flex h-fit w-full grid overflow-y-auto flex-col items-start sm:items-start">
-        <div className="flex px-5 py-3 w-full bg-black lg:mx-auto items-center justify-between">
+      <main className="flex h-fit w-full grid flex-col items-start justify-center">
+        <div className="flex px-5 py-4 w-full items-center justify-between">
           <Image
             className="dark:invert h-7 lg:h-20 w-fit"
             src="/logos/asido.png"
@@ -480,25 +485,32 @@ export default function Home() {
             priority
             quality={100}
           />
-          <Search className="rounded-full border-[2px] h-12 w-12 p-2 border-black" size={25}/>
-          <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5' onClick={toggleSidebar}>
-            <Menu className='text-dbackground dark:text-white' />
-          </Button>
+          
+          <div className="flex items-center">
+            {/* <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5'> */}
+              <Search className="text-[#0044B5] border-[#0044B5] rounded-full border-[2px] h-10 w-10 p-2" size={25}/>
+            {/* </Button> */}
+
+            <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5' onClick={toggleSidebar}>
+              <Menu className='text-[#0044B5] dark:text-white' />
+            </Button>
+          </div>
+
         </div>
         {/* Top Nav */}
         <div className="lg:flex hidden items-center justify-between w-full">
           <div className="flex items-center justify-center">
             { menuButtons.slice(0, 5).map((value, index) => (
-              <Button key={index} variant="ghost">
+              <Button key={index} variant="ghost" className="font-bold text-[#0044B5] hover:bg-transparent hover:text-[#00B191]">
                 {value.title}
               </Button>
             ))}
           </div>
           <div className="flex items-center justify-center">
-            <Button variant="ghost">
+            <Button variant="ghost" className="font-bold text-[#0044B5] hover:bg-transparent hover:text-[#00B191]">
               TAKE THE PLEDGE
             </Button>
-            <Button className="bg-green-700">
+            <Button className="font-bold bg-[#00B191] hover:bg-transparent hover:border-[1.5px] hover:text-[#00B191] hover:border-[#00B191]">
               DONATE
             </Button>
           </div>
@@ -506,10 +518,10 @@ export default function Home() {
         
         {/* Hero Section */}
         <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 2 * 0.2 }}
-      viewport={{ once: true }} className="">
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1 * 0.2 }}
+          viewport={{ once: true }} className="">
           <Image
             className="dark:invert h-fit w-full"
             src="/landing/hero.png"
@@ -520,30 +532,27 @@ export default function Home() {
           />
         </motion.div>
 
+        <Tabs defaultValue="milestones" className="lg:flex hidden w-full border-b-2 border-b-gray">
+          <TabsList className="flex items-center bg-transparent justify-center w-full">
+            {
+              tabs.map((value, index) => (
+                <TabsTrigger key={index} className="px-0 [data-state='active']:text-green-600 font-bold bg-none text-[#0044B5] hover:bg-transparent" value={value.value}>{value.title}</TabsTrigger>
+              ))
+            }
+          </TabsList>
+          <TabsContent value="milestone">Make changes to your account here.</TabsContent>
+        </Tabs>
+
+        <div className="relative w-full overflow-clip">
+          {/* <Timeline data={data} /> */}
+          <Timeline data={data} />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 2 * 0.2 }}
-          viewport={{ once: true }} className="p-4 py-4 flex bg-[#d1d1d1] items-center justify-between">
-              <p className="text-[#0044B5] font-bold">MILESTONES</p>
-          <Button className='lg:hidden bg-transparent hover:bg-transparent shadow-none px-5' onClick={toggleSidebar}>
-            <Menu className='text-[#0044B5] dark:text-white' />
-          </Button>
-        </motion.div>
-
-        <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 2 * 0.2 }}
-      viewport={{ once: true }} className="relative w-full overflow-clip">
-          <Timeline data={data} />
-        </motion.div>
-
-        <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 2 * 0.2 }}
-      viewport={{ once: true }}>
+          transition={{ duration: 0.6, delay: 5 * 0.2 }}
+          viewport={{ once: true }}>
           <div className="flex items-start px-4 flex-col gap-1.5">
             <p className="text-sm font-bold md:text-sm text-[#00B191]">
               Stay Informed

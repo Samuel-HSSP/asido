@@ -11,7 +11,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "../ui/sidebar";
-import { useRouter } from 'next/navigation';
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -51,7 +50,17 @@ const items = [
 ];
 
 export default function Navbar() {
-  const router = useRouter();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth < 1024);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
+
+  if (!isMobile) return null;
 
   return (
   <Sidebar className="lg:hidden">

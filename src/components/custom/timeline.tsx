@@ -37,8 +37,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-      <div className="max-w-7xl mx-auto py-10 px-10 md:px-8 lg:px-10">
-        <h2 className="text-lg font-bold text-center md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+      <div className="max-w-7xl py-20 mx-auto px-10 md:px-8 lg:px-10">
+        <h2 className="text-lg font-bold text-center md:text-4xl text-black dark:text-white max-w-4xl">
           Since inception in 2019, Asido Foundation has led bold advocacy for mental health reforms. These range from public awareness campaigns to the passing of the 2021 Mental Health Act.
         </h2>
       </div>

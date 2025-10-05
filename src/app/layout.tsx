@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import Navbar from "@/components/custom/navbar";
+import CustomCursor from "@/components/custom/cursor";
 
 
 const geistMono = Geist_Mono({
@@ -28,6 +29,7 @@ export default function RootLayout({
           className={`${geistMono.variable} w-full antialiased`}
         >
           {children}
+          <CustomCursor />
         </body>
       </SidebarProvider>
     </html>
